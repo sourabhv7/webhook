@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Webhook</title>
+    <link rel="shortcut icon" type="image/png" href="static/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <style type="text/css">
+		
+		body{
+			background-image:url(static/bg3.jpg);
+			background-size: cover;
+			background-attachment: fixed;
+		}
+    .button:hover {
+  opacity: 0.8;
+}
+
+            .button{
+                background: url("static/login.jpg") no-repeat;
+                cursor:pointer;
+                border: none;
+            }
+      
+
+	</style>
+  </head>
+ 
+  <body>
+
+    <div class="container">
+      
+      <h1>Login to view Your Secret text.</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login" id ="button"  >
+
+      </form>
+       
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}  
+    </div>
+  </body>
+</html>
+
