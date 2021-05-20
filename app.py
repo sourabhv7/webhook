@@ -12,7 +12,7 @@ def login():
         else:
             with open('file.txt', 'r') as f:
                 return render_template('index1.html', text=f.read())
-    return render_template('login.html', error=error)
+    return render_template('index.html', error=error)
 
 
 @app.route('/webhook', methods=['POST'])
@@ -34,4 +34,4 @@ def webhook():
 
 if __name__ == '__main__':
     # app.run()
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
