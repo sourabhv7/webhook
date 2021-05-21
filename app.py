@@ -7,7 +7,7 @@ app = Flask(__name__)
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'Sourabh@123':
+        if request.form['username'] != 'admin' or request.form['password'] != 'your-pass':
             error = 'Invalid Credentials. Please try again.'
         else:
             with open('file.txt', 'r') as f:
@@ -33,5 +33,5 @@ def webhook():
 
 
 if __name__ == '__main__':
-    # app.run()
+    
     app.run(debug=False, host='0.0.0.0', port=5000)
